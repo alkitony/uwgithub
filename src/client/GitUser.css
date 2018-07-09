@@ -1,0 +1,22 @@
+.border-div {
+  margin: 5px 0;
+  border: 2px gray solid;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img.resize {
+  width:540px; /* you can use % */
+  height: auto;
+}

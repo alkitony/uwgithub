@@ -1,7 +1,7 @@
 {
-  "name": "simple-react-full-stack",
+  "name": "uwgethub",
   "version": "1.0.0",
-  "description": "Boilerplate to build a full stack web application using React, Node.js, Express and Webpack.",
+  "description": "Pulls github user name and follows for username that starts with A or a",
   "main": "src/server/index.js",
   "scripts": {
     "start": "node src/server/index.js",
@@ -10,32 +10,46 @@
     "server": "nodemon src/server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "author": "Sandeep Raveesh",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alkitony/uwgithub.git"
+  },
+  "author": "Tony Lanera",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alkitony/uwgithub/issues"
+  },
   "dependencies": {
+    "bootstrap": "^4.1.1",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "jquery": "^3.3.1",
+    "node-fetch": "^2.1.2",
+    "popper.js": "^1.14.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
-    "concurrently": "^3.5.1",
+    "concurrently": "^3.6.0",
     "css-loader": "^0.28.11",
-    "eslint": "^5.0.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-react": "^7.9.1",
     "html-webpack-plugin": "^3.2.0",
-    "nodemon": "^1.17.3",
+    "nodemon": "^1.17.5",
     "style-loader": "^0.21.0",
-    "webpack": "^4.5.0",
+    "webpack": "^4.14.0",
     "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.3"
+    "webpack-dev-server": "^3.1.4"
   }
 }

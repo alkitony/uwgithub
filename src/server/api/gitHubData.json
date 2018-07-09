@@ -1,47 +1,4 @@
-const express = require('express');
-const cors = require('cors');
-const getGitUsers = require('./webservice/getGithubRepo');
-
-const app = express();
-
-const allowCrossDomain = (req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  res.header('Content-Type', 'application/json')
-  next();
-};
-
-app.use(express.static('dist'));
-app.use(cors());
-app.use(allowCrossDomain)
-
-console.log('about to execute getGitUsers');
-const finalGitUsers = getGitUsers().then(response => response);
-console.log(finalGitUsers);
-
-// let gitHubData
-// let mystuff = [{key: 'hey it worked'}];
-// request({
-//   url: 'https://api.github.com/repositories?since=1000',
-//   json: true,
-//   headers: { 'user-agent': 'tonys-app' }
-// }, (error, response, body) => { gitHubData = response.body } );
-
-// const gitRepoData = returnRepo();
-// const gitHubData = buildGithubData(gitRepoData);
-
-// function getGitHubData() {
-//   gitHubData = buildGithubData();
-// }
-// setInterval(getGitHubData, 240000);
-
-// const GITHUBURL = 'https://api.github.com/repositories?since=';
-// const count = 3;
-// const repoData = [];
-// const repoSince = 1000;
-// const getURL = `${GITHUBURL}${repoSince}`;
-const repoDataDisplay = [
+[
   {
     "id": 1008,
     "login": "andykent",
@@ -73,7 +30,7 @@ const repoDataDisplay = [
     "id": 1364,
     "login": "aharper",
     "avatar_url": "https://avatars3.githubusercontent.com/u/1002?v=4",
-    "followers": ["ahmetabdi", "angusshire"],
+    "followers": ["angusshire", "angusshire"],
     "followers_api": "https://api.github.com/users/aharper/followers",
     "followers_url": "https://github.com/aharper?tab=followers",
     "followers_cnt": 2
@@ -86,6 +43,15 @@ const repoDataDisplay = [
     "followers_api": "https://api.github.com/users/aanand/followers",
     "followers_url": "https://github.com/aanand?tab=followers",
     "followers_cnt": 375
+  },
+  {
+    "id": 1364,
+    "login": "aharper",
+    "avatar_url": "https://avatars3.githubusercontent.com/u/1002?v=4",
+    "followers": ["angusshire", "ahmetabdi"],
+    "followers_api": "https://api.github.com/users/aharper/followers",
+    "followers_url": "https://github.com/aharper?tab=followers",
+    "followers_cnt": 2
   },
   {
     "id": 1469,
@@ -113,41 +79,5 @@ const repoDataDisplay = [
     "followers_api": "https://api.github.com/users/ask/followers",
     "followers_url": "https://github.com/ask?tab=followers",
     "followers_cnt": 1200
-  },
-  {
-    "id": 1734,
-    "login": "aasm",
-    "avatar_url": "https://avatars1.githubusercontent.com/u/1910612?v=4",
-    "followers": [],
-    "followers_api": "https://api.github.com/users/aasm/followers",
-    "followers_url": "https://github.com/aasm?tab=followers",
-    "followers_cnt": 0
   }
 ]
-
-app.get('/api/getGitHubData', (req, res) => res.send(repoDataDisplay));
-
-// });
-// app.get('/api/getGitHubData', (req, res) => {
-//   returnRepo(getURL, repoData, count)
-//     .then((repoData) => {
-//       repoDataDisplay = repoData;
-//       console.log('In the .then from return repo in index');
-//       console.log(typeof repoData);
-//       res.send({ repoDataDisplay })
-//     });
-// });
-
-app.listen(8080, () => console.log('Server is running'));
-//   , () => {
-//   returnRepo(getURL, repoData, count)
-//     .then((repoData) => {
-//       repoDataDisplay = repoData;
-//       console.log('In the .then from return repo in index');
-//       console.log(typeof repoData);
-//     });
-// }
-
-
-// .then((repoData) => {
-//   console.log('I am here before get');
